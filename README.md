@@ -64,7 +64,7 @@ using CairoMakie
 X, y = make_blobs()
 
 dtc = @load DecisionTreeClassifier pkg=DecisionTree verbosity=0
-dtc_model = dtc(min_purity_increase=0.005, min_samples_leaf=1,         min_samples_split=2, max_depth=6)
+dtc_model = dtc(min_purity_increase=0.005, min_samples_leaf=1, min_samples_split=2, max_depth=6)
 dtc_mach = machine(dtc_model, X, y)
 MLJ.fit!(dtc_mach)
 x = fitted_params(dtc_mach)
